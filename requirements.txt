@@ -1,0 +1,11 @@
+transformers
+sentence-transformers
+langchain_community
+pymupdf
+torchvision
+PyPDF2
+accelerate
+qwen_vl_utils
+langchain-huggingface
+langchain-graph-retriever
+langchain_neo4j
