@@ -51,3 +51,5 @@ page*.png
 # Environment variables
 .env
 .env.local
+
+figure_table/

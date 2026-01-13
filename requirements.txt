@@ -9,3 +9,6 @@ qwen_vl_utils
 langchain-huggingface
 langchain-graph-retriever
 langchain_neo4j
+langchain_chroma
+vllm
+langchain-openai
