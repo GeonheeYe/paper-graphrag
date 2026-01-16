@@ -1,0 +1,8 @@
+"Training Setting","Training Tokens","w/o Tool Use","w/ Tool Use","w/o Tool Use","w/ Tool Use","w/o Tool Use","w/ Tool Use"
+"No Continual Training","-","-","-","2.9%","3.0%","12.3%","2.7%","2.3%"
+"Two-Stage Training","Stage 1: General Training","400B","-","-","2.9%","3.2%","14.8%","3.3%","2.3%"
+"Stage 2: Math Training","-","-","150B","19.1%","14.4%","37.2%","14.3%","6.7%"
+"Stage 1: Code Training","-","400B","-","5.9%","3.6%","19.9%","12.4%","10.0%"
+"Stage 2: Math Training","-","-","150B","21.9%","15.3%","39.7%","17.4%","9.4%"
+"One-Stage Training","Math Training","-","-","150B","20.5%","13.1%","37.6%","11.4%","6.5%"
+"Code & Math Mixed Training","-","400B","150B","17.6%","12.1%","36.3%","19.7%","13.5%"

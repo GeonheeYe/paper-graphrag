@@ -1,0 +1,5 @@
+"Model","Size","MMLU","BBH","HumanEval (Pass@1)","MBPP (Pass@1)"
+"Mistral","7B","62.4%","55.7%","28.0%","41.4%"
+"DeepSeek-Coder-Base-v1.5","7B","42.9%","42.9%","40.2%","52.6%"
+"DeepSeek-Coder-Base-v1.5","7B","49.1%","55.2%","43.2%","60.4%"
+"DeepSeekMath-Base","7B","54.9%","59.5%","40.9%","52.6%"

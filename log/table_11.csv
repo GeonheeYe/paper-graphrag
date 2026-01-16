@@ -1,0 +1,7 @@
+"Methods","Data Source","Reward Function","Gradient Coefficient"
+"SFT","q, o ~ P_sft(Q, O)","-","1"
+"RFT","q ~ P_sft(Q), o ~ π_sft(O|q)","Rule","Equation 10"
+"DPO","q ~ P_sft(Q), o+, o- ~ π_sft(O|q)","Rule","Equation 14"
+"Online RFT","q ~ P_sft(Q), o ~ π_θ(O|q)","Rule","Equation 10"
+"PPO","q ~ P_sft(Q), o ~ π_θ(O|q)","Model","Equation 18"
+"GRPO","q ~ P_sft(Q), {o_i}^G_{i=1} ~ π_θ(O|q)","Model","Equation 21"

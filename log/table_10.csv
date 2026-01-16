@@ -1,0 +1,4 @@
+"ArXiv Corpus","miniF2F-valid","miniF2F-test"
+"No Math Training","20.1%","21.7%"
+"MathPile","16.8%","16.4%"
+"ArXiv-RedPajama","14.8%","11.9%"
