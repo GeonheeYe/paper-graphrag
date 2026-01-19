@@ -1,14 +1,32 @@
-transformers
-sentence-transformers
-langchain_community
-pymupdf
-torchvision
-PyPDF2
-accelerate
-qwen_vl_utils
+# Web Framework
+flask
+python-dotenv
+
+# Vector Database & Embeddings
+langchain-chroma
 langchain-huggingface
-langchain-graph-retriever
-langchain_neo4j
-langchain_chroma
-vllm
+sentence-transformers
+
+# LLM & Transformers
+transformers
+torch
+torchvision
+accelerate
+
+# PDF Processing
+pymupdf
+PyPDF2
+
+# Vision-Language Model
+qwen-vl-utils
+
+# LangChain Extensions
+langchain-community
 langchain-openai
+
+# Optional: Graph RAG (필요시 주석 해제)
+# langchain-graph-retriever>=0.1.0
+# langchain-neo4j>=0.0.1
+
+# Optional: vLLM (대규모 배포시)
+# vllm>=0.2.0

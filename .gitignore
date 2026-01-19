@@ -1,55 +1,14 @@
-# file
-test.py
-GIT_SETUP.md
-geonlight_temp.py
-rag_test.py
-
 # Python
-__pycache__/
-*.egg-info/
-dist/
-build/
+__pycache__/*.py[cod]*.pyc
+venv/env/
 
-# Database files
-*.db
-*.db.lock
-*.sqlite
-*.sqlite3
-chroma_db/
+# Data
+data/uploads/
+data/chroma/
+data/logs/
 
-# Log files
-*.log
-log.jsonl
-
-# PDF files (큰 파일이므로 필요시 제외)
-# *.pdf
-# GRPO.pdf
+# Environment
+.env
 
 # IDE
-.vscode/
-.idea/
-*.swp
-*.swo
-*~
-
-# OS
-.DS_Store
-Thumbs.db
-desktop.ini
-
-# Temporary files
-*.tmp
-*.temp
-*.png
-*.jpg
-*.jpeg
-page*.png
-
-# Jupyter Notebook
-.ipynb_checkpoints
-
-# Environment variables
-.env
-.env.local
-
-figure_table/
+.vscode/.idea/*.swp
