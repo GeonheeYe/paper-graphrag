@@ -1,0 +1,26 @@
+# 자동 줄바꿈 문자 변환 설정
+* text=auto
+
+# Python 파일은 LF 사용 (Unix 스타일)
+*.py text eol=lf
+*.pyw text eol=lf
+
+# 설정 파일들도 LF 사용
+*.md text eol=lf
+*.txt text eol=lf
+*.yml text eol=lf
+*.yaml text eol=lf
+*.json text eol=lf
+*.jsonl text eol=lf
+*.toml text eol=lf
+
+# 바이너리 파일은 변환하지 않음
+*.png binary
+*.jpg binary
+*.jpeg binary
+*.gif binary
+*.pdf binary
+*.db binary
+*.bin binary
+*.so binary
+*.dll binary

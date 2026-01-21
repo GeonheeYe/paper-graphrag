@@ -195,7 +195,6 @@ def process_table(
     order,
     processor,
     model,
-    type,
     save_path,
     save_option=False,
     GraphRAG_OPTION=False,
@@ -223,17 +222,18 @@ def process_table(
                 page_idx=page_idx,
                 table_idx=table_idx,
                 block_idx=block_idx,
-                order=order,
-                type=type,
+                order=order, # 전역 순서
+                type=flag,
             ).to_dict()
         else: # RAG
             metadatas = make_rag_metadata(
                 doc_id=doc_id,
                 paper_name=paper_name,
                 page_idx=page_idx,
-                type ="table",
                 block_idx=block_idx,
                 table_idx=table_idx,
+                order=order,
+                type=flag   
             ).to_dict()
         doc_text = f"[캡션]:{caption}\n[요약]:{summary}"
         with open(os.path.join(save_path, f'table_{table_idx}.csv'), 'w', encoding='utf-8') as f:
@@ -262,7 +262,6 @@ def process_figure(
     order,
     processor,
     model,
-    type,
     save_path,
     save_option=False,
     GraphRAG_OPTION=False,
@@ -290,16 +289,17 @@ def process_figure(
                 block_idx=block_idx,
                 figure_idx=figure_idx,
                 order=order,
-                type=type,
+                type=flag,
             ).to_dict()
         else: # RAG
             metadatas = make_rag_metadata(
                 doc_id=doc_id,
                 paper_name=paper_name,
                 page_idx=page_idx,
-                type="figure",
                 block_idx=block_idx,
                 figure_idx=figure_idx,
+                order=order, 
+                type=flag,
             ).to_dict()
 
         doc_text = f"[캡션]:{caption}\n[요약]:{answer}"
@@ -319,11 +319,10 @@ def process_text_block(
     block_text, 
     page_idx, 
     block_idx, 
-    order = None,
     section = None,
     table_idx = None,
     figure_idx = None,
-    type = None,
+    order = None,
     GraphRAG_OPTION=False):
     """
     텍스트 블록 처리 및 벡터 스토어에 추가
@@ -337,7 +336,7 @@ def process_text_block(
             block_idx=block_idx,
             order=order,
             section=section,
-            type=type,
+            type='text',
         ).to_dict()
     else: # RAG
         metadatas = make_rag_metadata(
@@ -347,6 +346,8 @@ def process_text_block(
             block_idx=block_idx,
             table_idx=table_idx,
             figure_idx=figure_idx,
+            order=order,
+            type='text',
         ).to_dict()
 
     return answer, metadatas

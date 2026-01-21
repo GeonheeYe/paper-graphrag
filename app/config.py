@@ -10,6 +10,4 @@ class Config:
     SAVE_OPTION = os.getenv('SAVE_OPTION', False)
     EMBED_MODEL = os.getenv("EMBED_MODEL", 'upskyy/bge-m3-korean')
     VL_MODEL = os.getenv("VL_MODEL", "Qwen/Qwen3-VL-4B-Instruct")  # or Qwen/Qwen3-VL-8B-Instruct
-
-    OPENAI_API_KEY = os.getenv("OPENAI_API_KEY", "")
-    OPENAI_MODEL = os.getenv("OPENAI_MODEL", "gpt-4o-mini")
+    HF_MODEL = os.getenv("HF_MODEL", "Qwen/Qwen2.5-7B-instruct")

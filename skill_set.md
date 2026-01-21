@@ -1,9 +1,11 @@
-prompt engineering
-RAG
-GraphRAG
-Image-to-text
+## Skill
+- prompt engineering
+- RAG
+- GraphRAG
+- Image-to-text
+- flask
 
-trouble shotting
-model select
-tuning
-hyperparameter
+## trouble shotting
+- model select
+- tuning
+- hyperparameter

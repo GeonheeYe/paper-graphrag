@@ -3,25 +3,48 @@ from typing import Optional
 
 @dataclass
 class RAGMetadata:
-    paper_id: Optional[str] = None
+    """
+    doc_id : 논문 번호
+    paper_name : 논문 제목
+    page_idx : 페이지 번호
+    block_idx : 블록 번호
+    table_idx : 테이블 번호
+    figure_idx : 그림 번호
+    order : 전역 인덱스
+    type : 타입
+    """
     doc_id: Optional[str] = None
+    paper_name: Optional[str] = None
     page_idx: Optional[int] = None
     block_idx: Optional[int] = None
     table_idx: Optional[int] = None
     figure_idx: Optional[int] = None
+    order: Optional[int] = None 
+    type: Optional[str] = None
     def to_dict(self) -> dict:
         return asdict(self)
 
 
 @dataclass
 class GraphMetadata:
-    paper_id: Optional[str] = None
+    """
+    doc_id : 논문 번호
+    paper_name : 논문 제목
+    page_idx : 페이지 번호
+    block_idx : 블록 번호
+    table_idx : 테이블 번호
+    figure_idx : 그림 번호
+    order : 전역 인덱스
+    section : 섹션
+    type : 타입
+    """
     doc_id: Optional[str] = None
+    paper_name: Optional[str] = None
     page_idx: Optional[int] = None
     block_idx: Optional[int] = None
     table_idx: Optional[int] = None
     figure_idx: Optional[int] = None
-    order: Optional[int] = None
+    order: Optional[int] = None 
     section: Optional[str] = None
     type: Optional[str] = None
     def to_dict(self) -> dict:

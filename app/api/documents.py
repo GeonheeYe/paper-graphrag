@@ -1,5 +1,5 @@
 from flask import Blueprint, request, jsonify, current_app
-from ..utils.ids import new_id
+import hashlib
 from ..repositories.file_repo import FileRepo 
 from ..services.ingest_service import IngestService
 
@@ -20,14 +20,14 @@ def upload_document():
     if not f.filename.lower().endswith('.pdf'):
         return jsonify({'error': 'Only .pdf is supported'}), 400
     
-    # doc_id 생성
-    doc_id = new_id("doc")
+    # 파일 해시 기반 doc_id 생성 (중복 업로드 방지)
+    file_bytes = f.read()
+    file_hash = hashlib.sha256(file_bytes).hexdigest()
+    doc_id = f"doc_{file_hash[:12]}"
+    f.stream.seek(0)
 
     # file_repo 인스턴스 생성
     file_repo = FileRepo(current_app.config['UPLOAD_DIR']) #./data/uploads
-
-    # pdf 파일을 저장
-    pdf_path = file_repo.save_pdf(doc_id, f)
 
     # ingest 서비스 인스턴스 생성
     ingest = IngestService.from_app_config(current_app.config)
@@ -41,7 +41,10 @@ def upload_document():
             "message": "Document already exists in the vector database"
         }), 200
     else:
-        # ingest 서비스 실행 (문서 인덱싱)   
+        # pdf 파일을 저장
+        pdf_path = file_repo.save_pdf(doc_id, f)
+        
+        # ingest 서비스 실행 (문서 인덱싱)
         ingest.ingest(doc_id=doc_id, pdf_path=pdf_path)
         return jsonify({
             "doc_id": doc_id,
